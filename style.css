@@ -1,0 +1,142 @@
+/* التنسيقات العامة */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+button {
+    background-color: #FF6347;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #ff4500;
+}
+
+/* قسم الترحيب */
+#welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://londoninarabic.com/wp-content/uploads/2023/03/17795.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+/* قسم منيو الطعام */
+#menu-section {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #555;
+    padding: 10px 0;
+}
+
+.menu-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.menu-container {
+    margin: 20px;
+}
+
+/* تصميم رسالة التنبيه */
+.notification {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* عندما تظهر الرسالة */
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* قسم مراجعة الطلب */
+#review-section {
+    padding: 20px;
+    background-color: #222;
+    color: white;
+}
+
+/* تنسيق العناصر داخل قسم المراجعة */
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.order-item button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-item .delete-btn {
+    background-color: #ff6347;
+    color: white;
+}
+
+.order-item .delete-btn:hover {
+    background-color: #ff4500;
+}
+
+.order-item .add-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.order-item .add-btn:hover {
+    background-color: #45a049;
+}
+
+.total-price {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+}

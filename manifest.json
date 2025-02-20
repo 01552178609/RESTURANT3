@@ -1,0 +1,16 @@
+{
+    "name": "Restaurant App",
+    "short_name": "Restaurant",
+    "description": "Order your favorite food from our restaurant.",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#FF6347",
+    "icons": [
+        {
+            "src": "icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
