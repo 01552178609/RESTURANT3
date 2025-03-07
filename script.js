@@ -70,14 +70,41 @@ function removeItem(index) {
 }
 
 // وظيفة لإرسال الطلب
-function submitOrder() {
+async function submitOrder() {
     const tableNumber = document.getElementById('table-number').value;
-    if (tableNumber) {
-        alert(`Order submitted for table ${tableNumber}`);
-        localStorage.clear(); // مسح الأطعمة بعد الإرسال
-        window.location.reload(); // إعادة تحميل الصفحة
-    } else {
+
+    if (!tableNumber) {
         alert("Please enter your table number.");
+        return;
+    }
+
+    // تجهيز بيانات الطلب
+    const orderData = {
+        table: tableNumber,
+        items: selectedItems // الأطعمة المختارة
+    };
+
+    try {
+        const response = await fetch("http://your-server-ip:your-port/order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(orderData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message);
+            localStorage.clear(); // مسح الطلب بعد الإرسال
+            window.location.reload(); // إعادة تحميل الصفحة
+        } else {
+            alert("Failed to submit order. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error sending order:", error);
+        alert("Error connecting to server.");
     }
 }
 
